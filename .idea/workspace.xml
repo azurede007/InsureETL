@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="abdc9ca3-cf2d-427f-8359-d02554483d24" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/InsureETL.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/InsureETL.iml" afterDir="false" />
+    <list default="true" id="abdc9ca3-cf2d-427f-8359-d02554483d24" name="Changes" comment="updated the write to mysql by adding the driver class">
+      <change afterPath="$PROJECT_DIR$/api/database.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/insureBL.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/schemas.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/validator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/assets/css/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/assets/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stages/ingest.py" beforeDir="false" afterPath="$PROJECT_DIR$/stages/ingest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stages/transform.py" beforeDir="false" afterPath="$PROJECT_DIR$/stages/transform.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stages/writeback.py" beforeDir="false" afterPath="$PROJECT_DIR$/stages/writeback.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/offsets.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/offsets.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/spark_session.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/spark_session.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +32,25 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "azurede007"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;azurede007&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/azurede007/InsureETL.git",
-    "accountId": "c20b7d75-7d5d-4c79-9905-5fd5a354ac64"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/azurede007/InsureETL.git&quot;,
+    &quot;accountId&quot;: &quot;c20b7d75-7d5d-4c79-9905-5fd5a354ac64&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="35znexiLLrLe53yQsM5JS9KRdsc" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -56,21 +59,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.main.executor": "Run",
-    "Python.test.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/Training/InsuranceProject/InsureETL/sql",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;Python.validator.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;I do mind&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Training/InsuranceProject/InsureETL/ui&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Training\InsuranceProject\InsureETL\ui" />
+      <recent name="D:\Training\InsuranceProject\InsureETL" />
       <recent name="D:\Training\InsuranceProject\InsureETL\sql" />
     </key>
   </component>
@@ -119,9 +126,32 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="validator" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="InsureETL" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/api" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/api/validator.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.validator" />
         <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
@@ -141,6 +171,28 @@
       <option name="presentableId" value="Default" />
       <updated>1764121866491</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added mysql jar">
+      <option name="closed" value="true" />
+      <created>1764212357394</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1764212357394</updated>
+    </task>
+    <task id="LOCAL-00002" summary="updated the write to mysql by adding the driver class">
+      <option name="closed" value="true" />
+      <created>1764213461940</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1764213461940</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added mysql jar" />
+    <MESSAGE value="updated the write to mysql by adding the driver class" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated the write to mysql by adding the driver class" />
   </component>
 </project>

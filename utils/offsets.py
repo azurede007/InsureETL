@@ -23,17 +23,45 @@ class OffsetManager:
 
         return df.first()["last_offset"]
 
-
     def update_offset(self, table, pk, df):
-        if df.count() == 0:
-            return
-        max_pk = df.agg({pk: "max"}).first()[0]
-        conn = mysql.connector.connect(
-            host=self.mysql_conf["host"],
-            port=self.mysql_conf["port"],
-            user=self.mysql_conf["user"],
-            password=self.mysql_conf["password"],
-            database=self.mysql_conf["database"]
-        )
-        cursor = conn.cursor()
+        """
+        Inserts a new offset row into MySQL etl_offsets using mysql-connector.
+        """
+        try:
+            if df.count() == 0:
+                return  # nothing to update
+
+            # Get max primary key from DF
+            max_pk = df.agg({pk: "max"}).first()[0]
+            print(f"Updating offset: table={table}, last_offset={max_pk}")
+
+            # Connect to MySQL
+            conn = mysql.connector.connect(
+                host=self.mysql_conf["host"],
+                port=self.mysql_conf["port"],
+                user=self.mysql_conf["user"],
+                password=self.mysql_conf["password"],
+                database=self.mysql_conf["database"]
+            )
+            cursor = conn.cursor()
+
+            # Insert offset record
+            sql = """
+                   INSERT INTO etl_offsets (table_name, last_offset)
+                   VALUES (%s, %s)
+               """
+            cursor.execute(sql, (table, max_pk))
+            conn.commit()
+
+            cursor.close()
+            conn.close()
+
+            print("Offset updated successfully.")
+
+        except Exception as e:
+            print("Failed to update offset:", e)
+
+
+
+
 

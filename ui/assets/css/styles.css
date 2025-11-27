@@ -1,0 +1,45 @@
+
+body {
+  background-color: #f5f7fb;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.metric-card {
+  border-radius: 0.75rem;
+  border: none;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05);
+}
+
+.section-content {
+  animation: fadeIn 0.25s ease-in-out;
+}
+
+.footer {
+  position: sticky;
+  top: 100%;
+}
+
+.table thead th {
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Small tweaks for mobile */
+@media (max-width: 575.98px) {
+  .navbar-brand span {
+    font-size: 0.95rem;
+  }
+  .metric-card .display-6 {
+    font-size: 1.75rem;
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
