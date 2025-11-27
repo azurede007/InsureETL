@@ -1,0 +1,8 @@
+mysql:
+  host: "10.93.160.3"
+  port: 3306
+  database: "kbnhzraf_insurancedb"
+  user: "root"
+  password: "root"
+  driver: "com.mysql.cj.jdbc.Driver"
+  
