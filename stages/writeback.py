@@ -10,6 +10,7 @@ class WriteBackStage:
          .option("password", self.mysql_conf["password"])
          .option("url", url)
          .option("dbtable", "insurance_metrics")
+         .option("driver", "com.mysql.cj.jdbc.Driver")
          .mode("append").save())
 
         self.logger.info("Metrics written to MySQL")
