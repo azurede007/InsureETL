@@ -1,0 +1,54 @@
+Spark Local:
+=================
+spark-submit --master local[*] --jars file:///c:/spark/jars/mysql-connector-j-8.0.33.jar --py-files Insure-pkg.zip --files conf/config.yml main.py
+
+spark-submit --master local[*] --jars file:///c:/spark/jars/mysql-connector-j-8.0.33.jar --py-files Insurance-pkg.zip --files conf/config.yml main.py
+
+
+Spark Standalone:
+=================
+
+cd %SPARK_HOME%\bin
+spark-class.cmd org.apache.spark.deploy.master.Master
+
+
+cd %SPARK_HOME%\bin
+spark-class.cmd org.apache.spark.deploy.worker.Worker  spark://192.168.88.17:7077
+spark-shell –spark://localhost:7077
+
+pip download mysql-connector-python --platform any --only-binary=:all: --no-deps
+
+spark-submit ^
+--master spark://192.168.88.17:7077 ^
+--driver-memory 4g ^
+--executor-memory 4g ^
+--executor-cores 2 ^
+--jars file:///C:/spark/jars/mysql-connector-j-8.0.33.jar ^
+--py-files Insure-pkg.zip,mysql_connector_python-9.5.0-py2.py3-none-any.whl ^
+--files conf/config.yml main.py ^
+main.py
+
+
+GCS cloud:
+=========
+
+rm -rf InsuranceETL
+
+git clone https://github.com/azurede007/InsuranceETL
+
+cd InsuranceETL
+
+zip -r Insurance-pkg.zip utils/ stages/
+
+pip download mysql-connector-python --platform any --only-binary=:all: --no-deps -d .
+
+gsutil -m cp -r . gs://iz-insureproject/insurance-etl
+
+
+gcloud dataproc batches submit pyspark gs://iz-insureproject/insurance-etl/main.py \
+--region=us-central1 \
+--batch=insurance-010 \
+--version=2.3 \
+--py-files=gs://iz-insureproject/insurance-etl/Insurance-pkg.zip,gs://iz-insureproject/insurance-etl/mysql_connector_python-9.5.0-py2.py3-none-any.whl \
+--files=gs://iz-insureproject/insurance-etl/conf/config.yml \
+--jars gs://iz-insureproject/insurance-etl/mysql-connector-j-8.0.33.jar
